@@ -1,0 +1,22 @@
+.videoMain {
+  width: 100%;
+  height: 100dvh;
+  position: relative;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .logo {
+    position: fixed; // Mantém o logo fixo enquanto rola
+    top: 20px; // Posição inicial do logo
+    left: 20px; // Posição inicial do logo
+    width: 10rem; // Ajuste do tamanho do logo
+    z-index: 10; // Garante que o logo esteja sobreposto ao vídeo
+    transition: 0.3s; // Transição suave na mudança de logo
+    cursor: pointer;
+    width: 7rem;
+  }
+}

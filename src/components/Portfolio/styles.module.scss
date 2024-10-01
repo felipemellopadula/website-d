@@ -1,0 +1,357 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // Define 4 colunas de igual largura
+  grid-template-rows: repeat(3, 1fr); // Define 2 linhas de igual altura
+  height: 88vh; // Ajuste conforme necessário
+  width: 100%;
+  grid-template-areas:
+    " item1  item2  item3  item4"
+    " item5  item6  item7  item8"
+    " item9  item10  item11  item12";
+  .item1 {
+    grid-area: item1;
+    background-image: url("../../assets/peça-carro01.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0); // Inicialmente transparente
+      transition: background-color 0.3s ease;
+      z-index: 1;
+    }
+
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2rem; // Ajuste o tamanho do texto conforme necessário
+      font-family: var(
+        --font-family1
+      ); // Certifique-se que a variável está definida no projeto
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2; // Coloca o título acima do overlay
+      text-align: center;
+      pointer-events: none; // Para evitar que o título interfira no hover
+    }
+
+    &:hover::after {
+      background-color: rgba(255, 81, 0, 0.9); // Cor de fundo no hover
+      transition: 0.4s;
+      cursor: pointer;
+    }
+
+    &:hover .title {
+      opacity: 1; // Mostra o título ao passar o mouse
+      transition: 0.4s;
+    }
+  }
+
+  .item2 {
+    grid-area: item2;
+    background-image: url("../../assets/embrase-backlight.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0); // Inicialmente transparente
+      transition: background-color 0.3s ease;
+      z-index: 1;
+    }
+
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2rem; // Ajuste o tamanho do texto conforme necessário
+      font-family: var(
+        --font-family1
+      ); // Certifique-se que a variável está definida no projeto
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2; // Coloca o título acima do overlay
+      text-align: center;
+      pointer-events: none; // Para evitar que o título interfira no hover
+    }
+
+    &:hover::after {
+      background-color: rgba(255, 81, 0, 0.9); // Cor de fundo no hover
+      transition: 0.4s;
+      cursor: pointer;
+    }
+
+    &:hover .title {
+      opacity: 1; // Mostra o título ao passar o mouse
+      transition: 0.4s;
+    }
+  }
+
+  .item3 {
+    grid-area: item3;
+    background-color: #fd0025;
+  }
+
+  .item4 {
+    grid-area: item4;
+    background-color: #333333;
+  }
+
+  .item5 {
+    grid-area: item5;
+    background-color: #fd0025;
+  }
+
+  .item6 {
+    grid-area: item6;
+    background-color: #333333;
+  }
+
+  .item7 {
+    grid-area: item7;
+    background-color: #fd0025;
+  }
+
+  .item8 {
+    grid-area: item8;
+    background-color: #333333;
+  }
+
+  .item9 {
+    grid-area: item9;
+    background-color: #fd0025;
+  }
+
+  .item10 {
+    grid-area: item10;
+    background-color: #333333;
+  }
+
+  .item11 {
+    grid-area: item11;
+    background-color: #fd0025;
+  }
+
+  .item12 {
+    grid-area: item12;
+    background-color: #333333;
+  }
+}
+
+// Media query para telas menores
+@media (max-width: 48rem) {
+  // aproximadamente 760px
+  .container {
+    overflow: auto;
+    height: 300dvh;
+    grid-template-columns: repeat(2, 1fr); // Define 4 colunas de igual largura
+    grid-template-rows: repeat(6, 1fr); // Define 2 linhas de igual altura
+    width: 100%;
+    grid-template-areas:
+      " item1  item2"
+      "item3  item4"
+      " item5  item6"
+      "item7  item8"
+      " item9  item10"
+      " item11  item12";
+    .item1 {
+      grid-area: item1;
+    }
+
+    .item2 {
+      grid-area: item2;
+    }
+
+    .item3 {
+      grid-area: item3;
+    }
+
+    .item4 {
+      grid-area: item4;
+    }
+
+    .item5 {
+      grid-area: item5;
+    }
+
+    .item6 {
+      grid-area: item6;
+    }
+
+    .item7 {
+      grid-area: item1;
+    }
+
+    .item8 {
+      grid-area: item2;
+    }
+
+    .item9 {
+      grid-area: item3;
+    }
+
+    .item10 {
+      grid-area: item4;
+    }
+
+    .item11 {
+      grid-area: item5;
+    }
+
+    .item12 {
+      grid-area: item6;
+    }
+  }
+}
+
+@media (max-width: 31.25rem) {
+  .container {
+    overflow: auto;
+    height: 600dvh;
+    grid-template-columns: repeat(1, 1fr); // Define 4 colunas de igual largura
+    grid-template-rows: repeat(12, 1fr); // Define 2 linhas de igual altura
+    width: 100%;
+    grid-template-areas:
+      " item1"
+      "item2"
+      "item3"
+      "item4"
+      " item5"
+      "item6"
+      "item7"
+      "item8"
+      " item9"
+      "item10"
+      " item11"
+      "item12";
+    .item1 {
+      grid-area: item1;
+    }
+
+    .item2 {
+      grid-area: item2;
+    }
+
+    .item3 {
+      grid-area: item3;
+    }
+
+    .item4 {
+      grid-area: item4;
+    }
+
+    .item5 {
+      grid-area: item5;
+    }
+
+    .item6 {
+      grid-area: item6;
+    }
+
+    .item7 {
+      grid-area: item1;
+    }
+
+    .item8 {
+      grid-area: item2;
+    }
+
+    .item9 {
+      grid-area: item3;
+    }
+
+    .item10 {
+      grid-area: item4;
+    }
+
+    .item11 {
+      grid-area: item5;
+    }
+
+    .item12 {
+      grid-area: item6;
+    }
+  }
+}
+
+.black__square {
+  height: 25rem;
+  width: auto;
+  background-color: rgb(0, 0, 0);
+  grid-column: span 1; // Ocupa 1 coluna
+}
+
+.black__square_a {
+  height: 25rem;
+  width: auto;
+  background-color: rgb(0, 0, 0);
+  grid-column: span 2; // Ocupa 2 colunas
+}
+
+.red__square {
+  height: 25rem;
+  width: auto;
+  background-color: #fd0025;
+
+  div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+  }
+
+  h5 {
+    font-family: var(--font-family2);
+    color: white;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  h3 {
+    font-family: var(--font-family1);
+    font-weight: var(--font-weight1);
+    font-size: clamp(1rem, 0.679rem + 1.468vw, 2rem);
+    color: white;
+    text-align: center;
+  }
+}
+
+.red__square_b {
+  height: 25rem;
+  width: auto;
+  background-color: #fd0025;
+  grid-column: span 1;
+}
+
+.black__square_b {
+  height: 25rem;
+  width: auto;
+  background-color: rgb(0, 0, 0);
+  grid-column: span 1;
+}
