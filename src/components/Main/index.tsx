@@ -4,7 +4,7 @@ import videoBgMobile from "../../assets/ani-ipad2.mp4";
 import videoBgTablet from "../../assets/ani-celular02.mp4";
 import styles from "./styles.module.scss";
 import LogoUnityBranco from "../../assets/LogoUnityBranco.png";
-import LogoUnity from "../../assets/LogoUnity3d.png";
+import LogoUnity from "../../assets/LogoUnity3dB.png";
 
 export const Main = () => {
   const [videoSrc, setVideoSrc] = useState(videoBgDesktop);
