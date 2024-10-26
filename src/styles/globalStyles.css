@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=SUSE:wght@100..800&family=Sevillana&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root {
-  --color-brand-1: #364fc7;
+  --color-brand-1: #f6f5f2;
+  --color-brand-2: #f0ebe3;
+  --color-brand-3: #f5efff;
   --grey-1: #212529;
   --grey-2: #868e96;
   --grey-3: #adb5bd;
@@ -9,11 +10,13 @@
   --grey-5: #e9ecef;
   --grey-6: #e9ecef;
   --mode: #ffffff;
-  --font-family1: "Oswald", sans-serif;
+  --font-family1: "Roboto", sans-serif;
   --font-family2: "SUSE", sans-serif;
   --font-family3: "Sevillana", cursive;
-  --font-weight1: 800;
+  --font-weight1: 300;
   --font-weight2: 500;
+  --font-weight2: 700;
+  --font-weight2: 900;
 }
 
 body {

@@ -1,0 +1,16 @@
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: black;
+
+  p {
+    font-family: var(--font-family1);
+    font-size: clamp(0.5rem, 0.314rem + 0.762vw, 0.8rem);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+  }
+}

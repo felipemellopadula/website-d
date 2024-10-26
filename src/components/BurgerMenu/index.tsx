@@ -1,12 +1,18 @@
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa"; // Importando o ícone FaTimes para fechar o menu
+import { FaBars, FaTimes } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./styles.module.scss";
 
-const BurgerMenu = () => {
+export const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -15,18 +21,27 @@ const BurgerMenu = () => {
         {isOpen ? <FaTimes /> : <FaBars />}
       </button>
       <nav className={`${styles.navMenu} ${isOpen ? styles.open : ""}`}>
-        <button onClick={toggleMenu} className={styles.closeButton}>
+        <button onClick={closeMenu} className={styles.closeButton}>
           <FaTimes />
         </button>
         <ul>
-          <li>HOME</li>
-          <li>QUEM SOMOS</li>
-          <li>TRABALHOS</li>
-          <li>CONTATO</li>
+          {[
+            { label: "HOME", path: "/" },
+            { label: "O QUE FAZEMOS", path: "/o-que-fazemos" },
+            { label: "TRABALHOS", path: "/trabalhos" },
+            { label: "AGÊNCIA", path: "/agencia" },
+            { label: "CONTATO", path: "/contato" },
+          ].map((item, index) => (
+            <li
+              key={index}
+              className={`${isOpen ? styles.openMenuItem : ""}`}
+              onClick={closeMenu}
+            >
+              <Link to={item.path}>{item.label}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>
   );
 };
-
-export default BurgerMenu;

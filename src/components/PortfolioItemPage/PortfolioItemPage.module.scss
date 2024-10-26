@@ -1,0 +1,196 @@
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  container: main / inline-size;
+
+  .header {
+    width: 100%;
+    height: 29rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    background-image: radial-gradient(
+      circle at 2px 2px,
+      rgba(0, 0, 0, 0.2) 1px,
+      transparent 0
+    );
+    background-size: 4px 4px;
+    background-position: 0 0;
+    position: relative;
+
+    .boxWhite {
+      width: 90%;
+      height: 18.75rem;
+      background-color: rgb(255, 255, 255);
+      position: absolute;
+      z-index: 1;
+    }
+
+    .headerTitle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(0, 0, 0);
+      font-size: clamp(1.8rem, 1.254rem + 2.495vw, 3.5rem);
+      font-weight: 700;
+      text-align: center;
+      z-index: 2;
+      font-family: var(--font-family1);
+    }
+  }
+
+  .content {
+    padding-top: 2rem;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 75rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto; // Ajuste automático para as linhas
+    font-family: var(--font-family2);
+    font-size: 1.4rem;
+
+    .item1 {
+      width: 80%; // Define o width padrão
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+
+      .client {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        h4 {
+          font-family: var(--font-family2);
+          font-size: clamp(1rem, 0.807rem + 0.881vw, 1.6rem);
+          color: var(--grey-2);
+        }
+        p {
+          font-family: var(--font-family2);
+          font-size: clamp(1rem, 0.807rem + 0.881vw, 1.6rem);
+          font-weight: var(--font-weight6);
+        }
+      }
+
+      .midia {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        h4 {
+          font-family: var(--font-family2);
+          font-size: clamp(1rem, 0.807rem + 0.881vw, 1.6rem);
+          color: var(--grey-2);
+        }
+        p {
+          font-family: var(--font-family2);
+          font-size: clamp(1rem, 0.807rem + 0.881vw, 1.6rem);
+          font-weight: var(--font-weight6);
+        }
+      }
+
+      .share {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        h4 {
+          font-family: var(--font-family2);
+          font-size: clamp(1rem, 0.807rem + 0.881vw, 1.6rem);
+          color: var(--grey-2);
+        }
+        .shareIcons {
+          cursor: pointer;
+          display: flex;
+          gap: 1rem;
+
+          .shareIcon {
+            font-size: clamp(0.6rem, 0.514rem + 1.429vw, 1.8rem);
+            color: black;
+          }
+        }
+      }
+    }
+
+    .item2 {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      gap: 1rem;
+      color: var(--grey-1);
+      padding-bottom: 2rem;
+
+      p {
+        font-size: clamp(1.1rem, 1.004rem + 0.44vw, 1.4rem);
+        line-height: clamp(2cqh, 2cqh + 2cqh, 3cqh);
+      }
+    }
+
+    .item3 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      width: 100%;
+      grid-column: 1 / 3;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      video {
+        width: 100%; // O vídeo ocupará toda a largura do contêiner
+        height: auto; // Mantém a proporção do vídeo
+        border-radius: 0.5rem; // Adicione bordas arredondadas se desejado
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Adicione uma sombra sutil
+      }
+    }
+
+    .item4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      grid-column: 1 / 3;
+      width: 100%;
+      gap: 1rem;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    footer {
+      width: 100%;
+    }
+  }
+}
+
+@container main (max-width: 48rem) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    .item1 {
+      grid-column: 1 / 3;
+      max-width: 50%;
+      margin: 0 auto;
+      gap: 0.5rem;
+      justify-content: space-between;
+      text-align: right;
+    }
+
+    .item2 {
+      grid-column: 1 / 3;
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@container main (max-width: 30rem) {
+  .content {
+    .item1 {
+      max-width: 70%;
+    }
+  }
+}

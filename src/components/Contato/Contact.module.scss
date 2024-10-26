@@ -1,0 +1,133 @@
+.contactWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0;
+  background-color: #fff;
+  font-family: var(--font-family1);
+}
+
+.container {
+  width: 100%;
+  max-width: 90%;
+  display: flex;
+  gap: 4rem;
+}
+
+.leftColumn {
+  flex: 1;
+
+  h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: clamp(1.2rem, 1cqw + 1cqw, 1.2rem);
+    margin-bottom: 2rem;
+  }
+
+  .contactInfo {
+    color: #666;
+    line-height: 1.6;
+  }
+}
+
+.rightColumn {
+  flex: 1;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .formRow {
+    display: flex;
+    gap: 2rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.8rem 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: #000;
+    }
+
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+  textarea {
+    height: 100px;
+    resize: none;
+  }
+
+  button {
+    align-self: flex-start;
+    background-color: #000;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #ffffff;
+      color: rgb(53, 53, 53);
+      cursor: pointer;
+      transition: ease-in 0.2s;
+      border: 1px solid black;
+    }
+  }
+}
+
+.inputError {
+  border-bottom-color: #ff5252 !important;
+}
+
+.errorMessage {
+  color: #ff5252;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.additionalInfo {
+  margin-top: 2rem;
+  text-align: right;
+  font-size: 0.9rem;
+  color: #666;
+  max-width: 1200px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .contactForm {
+    .formRow {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  .additionalInfo {
+    text-align: center;
+    padding: 0 1rem;
+  }
+}

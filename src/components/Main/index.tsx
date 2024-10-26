@@ -4,7 +4,6 @@ import videoBgDesktop from "../../assets/ani02-3.mp4";
 import videoBgMobile from "../../assets/ani-ipad2.mp4";
 import videoBgTablet from "../../assets/ani-celular02.mp4";
 import styles from "./styles.module.scss";
-import AboutUs from "../AboutUs"; // Importe o componente AboutUs
 import LogoUnityBranco from "../../assets/LogoUnity3db.png";
 import LogoUnity from "../../assets/LogoUnity3d.png";
 
@@ -51,7 +50,6 @@ export const Main = () => {
         <img className={styles.logo} src={logo} alt="Logo Unity" />
         <video src={videoSrc} loop autoPlay muted></video>
       </div>
-      <AboutUs />
     </>
   );
 };

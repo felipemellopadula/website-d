@@ -1,0 +1,31 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.input {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+
+  &:focus {
+    outline: none;
+    border-color: #000;
+  }
+}
+
+.inputError {
+  border-color: #ff5252 !important;
+}
+
+.errorMessage {
+  color: #ff5252;
+  font-size: 0.8rem;
+}
