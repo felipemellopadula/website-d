@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 export const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
