@@ -1,10 +1,9 @@
-// components/Main/index.tsx
 import { useState, useEffect } from "react";
 import videoBgDesktop from "../../assets/ani02-3.mp4";
 import videoBgMobile from "../../assets/ani-ipad2.mp4";
 import videoBgTablet from "../../assets/ani-celular02.mp4";
 import styles from "./styles.module.scss";
-import LogoUnityBranco from "../../assets/LogoUnity3db.png";
+import LogoUnityBranco from "../../assets/LogoUnityBranco.png";
 import LogoUnity from "../../assets/LogoUnity3d.png";
 
 export const Main = () => {
@@ -26,10 +25,8 @@ export const Main = () => {
       const aboutUsSection = document.getElementById("about-us");
       const aboutUsTop = aboutUsSection?.getBoundingClientRect().top || 0;
       if (aboutUsTop <= 0) {
-        // Altera para o logo padrão ao alcançar AboutUs
         setLogo(LogoUnity);
       } else {
-        // Mantém o logo branco enquanto está acima do AboutUs
         setLogo(LogoUnityBranco);
       }
     };
