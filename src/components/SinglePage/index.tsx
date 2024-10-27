@@ -1,4 +1,3 @@
-// components/Home.tsx
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Main } from "../Main";
