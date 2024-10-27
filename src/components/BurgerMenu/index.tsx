@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import styles from "./styles.module.scss";
 
