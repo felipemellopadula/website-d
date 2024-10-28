@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link as ScrollLink } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 export const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,10 +17,7 @@ export const BurgerMenu = () => {
 
   const handleMenuItemClick = (path: string) => {
     closeMenu();
-    const element = document.getElementById(path.slice(1));
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    navigate(path);
   };
 
   return (
@@ -33,20 +31,18 @@ export const BurgerMenu = () => {
         </button>
         <ul>
           {[
-            { label: "HOME", path: "#main" },
-            { label: "O QUE FAZEMOS", path: "#servicos" },
-            { label: "TRABALHOS", path: "#portfolio" },
-            { label: "AGÊNCIA", path: "#agencia" },
-            { label: "CONTATO", path: "#contato" },
+            { label: "HOME", path: "/" },
+            { label: "O QUE FAZEMOS", path: "/servicos" },
+            { label: "TRABALHOS", path: "/portfolio" },
+            { label: "AGÊNCIA", path: "/agencia" },
+            { label: "CONTATO", path: "/contato" },
           ].map((item, index) => (
             <li
               key={index}
               className={`${isOpen ? styles.openMenuItem : ""}`}
               onClick={() => handleMenuItemClick(item.path)}
             >
-              <ScrollLink to={item.path.slice(1)} smooth>
-                {item.label}
-              </ScrollLink>
+              {item.label}
             </li>
           ))}
         </ul>

@@ -8,9 +8,33 @@
 
   p {
     font-family: var(--font-family1);
-    font-size: clamp(0.5rem, 0.314rem + 0.762vw, 0.8rem);
+    font-size: clamp(0.8rem, 0.643rem + 0.952vw, 1.1rem);
     color: white;
     padding: 1.5rem;
     text-align: center;
+  }
+
+  .socialIcons {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+
+    a {
+      color: white;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+}
+
+@media (max-width: 48rem) {
+  .footer {
+    p {
+      line-height: 1.2rem;
+    }
   }
 }
