@@ -45,7 +45,7 @@ export const Main = () => {
     <>
       <div className={styles.videoMain}>
         <img className={styles.logo} src={logo} alt="Logo Unity" />
-        <video src={videoSrc} loop autoPlay muted></video>
+        <video src={videoSrc} loop autoPlay muted playsInline></video>
       </div>
     </>
   );
